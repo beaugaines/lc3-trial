@@ -21,8 +21,11 @@
           .option-line Literature
           .option-line Guides
       .col-xs-3.text-right.search-col
-        = link_to 'Sign In', '#', class: 'sign-up-in-link sign-in default-header'
-        = link_to 'Sign Up', '#', class: 'sign-up-in-link sign-up default-header'
+        - if user_signed_in?
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete
+        - else
+          = link_to 'Sign In', new_user_session_path, class: 'sign-up-in-link sign-in default-header'
+          = link_to 'Sign Up', new_user_registration_path, class: 'sign-up-in-link sign-up default-header'
         = form_tag '', method: :get, class: 'search form' do
           .input-group.search
             %input.form-control{ name: "query", placeholder: "Search title, author, theme, and more...", type: "text", autocomplete: 'off' }
@@ -38,8 +41,11 @@
               %i.fa.fa-search.fa-stack-1x
           .links-col.pull-right.user-status
             .hidden-sm
-              = link_to 'Sign In', '#'
-              = link_to 'Sign Up', '#'
+              - if user_signed_in?
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete
+              - else
+                = link_to 'Sign In', new_user_session_path
+                = link_to 'Sign Up', new_user_registration_path
           .links-col.pull-right.visible-sm
             = link_to '#', class: 'header-menu-option' do
               .option-line Lit
@@ -58,9 +64,9 @@
                 = image_tag 'header-icon-placeholder.png', class: 'icon', alt: 'The LitCharts.com logo.'
                 %span.text LitCharts
             %td.hidden-xs.sm-signup-signin
-              = link_to 'Sign Up', '#'
+              = link_to 'Sign Up', new_user_registration_path
             %td.hidden-xs.sm-signup-signin
-              = link_to 'Sign In', '#'
+              = link_to 'Sign In', new_user_session_path
       .col-xs-12
         = form_tag '', method: :get, class: 'search form' do
           .input-group.search
