@@ -1,0 +1,7 @@
+%h1 Texts
+- @texts.each do |text|
+  .row
+    .col
+      .card
+        .card-title= link_to text.name, text
+        .card-body= truncate(text.content)
