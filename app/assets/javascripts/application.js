@@ -28,7 +28,8 @@ $(document).ready(function() {
 
   const textField = document.querySelector('.text-content');
 
-  textField.addEventListener('mouseup', function() {
+  textField.addEventListener('mouseup', function(e) {
+    e.preventDefault();
     launchHighlightModal();
   });
 
