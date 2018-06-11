@@ -40,6 +40,7 @@ $(document).ready(function() {
   });
 
   textField.addEventListener('touchend', function(e) {
+    e.preventDefault();
     launchHighlightModal();
   });
 
