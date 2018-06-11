@@ -17,3 +17,8 @@ heroku run rake db:setup
 ```
 
 Login with credentials 'test@user.com', 'password'
+
+### Todo
+- add tests
+- add caching
+- experiment with [tocca.js](https://gianlucaguarini.com/Tocca.js/) to improve mobile touch events
