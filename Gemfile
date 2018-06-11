@@ -4,6 +4,7 @@ ruby '2.5.1'
 
 gem 'rails', '4.2.9'
 gem 'pg', '~> 0.15'
+gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
@@ -13,6 +14,10 @@ gem 'hamlit-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
 gem 'feathericon-rails'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'
