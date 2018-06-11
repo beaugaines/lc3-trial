@@ -32,6 +32,10 @@ $(document).ready(function() {
     launchHighlightModal();
   });
 
+  textField.addEventListener('touchend', function(e) {
+    launchHighlightModal();
+  });
+
   $("#new_highlight").on("submit", function() {
     $("#highlight-form").modal("hide");
   });
