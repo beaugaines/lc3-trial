@@ -310,3 +310,21 @@
 .alert {
   cursor: pointer;
 }
+
+.mini-alert {
+  border: 1px solid green;
+  padding: 2rem 3 rem;
+  background-color: #efefef;
+}
+
+// fade out flash
+@keyframes fadeOut {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.alert {
+  animation: fadeOut 8000ms ease-in 0s 1 forwards;
+}

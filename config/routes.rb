@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :highlights
   end
 
+  get 'my-litcharts/notes', to: 'highlights#index', as: :notes
+
   authenticated :user do
     root 'texts#index', as: :authenticated_root
   end

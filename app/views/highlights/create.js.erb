@@ -1,3 +1,6 @@
+var emptyState = $('.highlights').find('p');
+if (emptyState.length > 0) emptyState.remove();
+
 $('.highlights').append('<%= j render(@highlight) %>');
 $('.flash').html('<div class="alert alert-success" data-item-id="<%= @highlight.id %>">Highlight added! (click to view)</div>');
 

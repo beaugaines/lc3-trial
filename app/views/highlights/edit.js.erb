@@ -1,0 +1,2 @@
+$("#highlight_<%= @highlight.id %>").html('<%= j render("highlights/form", text: @text, highlight: @highlight) %>');
+$('blockquote.selected-text').html($('#highlight_content').val());

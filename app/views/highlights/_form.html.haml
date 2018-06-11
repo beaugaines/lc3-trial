@@ -1,0 +1,9 @@
+= form_for [text, highlight], remote: true do |f|
+  .form-group
+    = f.label :content, class: 'sr-only'
+    = f.hidden_field :content
+    %blockquote.selected-text
+  .form-group
+    = f.label :notes
+    = f.text_area :notes, class: 'form-control'
+  = f.submit class: 'btn btn-primary'
