@@ -14,6 +14,7 @@ gem 'hamlit-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
 gem 'feathericon-rails'
+gem 'faker'
 
 group :production do
   gem 'rails_12factor'
@@ -39,6 +40,5 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'faker'
 end
 
