@@ -17,6 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
+
   function launchHighlightModal() {
     const selectedText = window.getSelection().toString();
 
@@ -26,6 +27,8 @@ $(document).ready(function() {
   };
 
   const textField = document.querySelector('.text-content');
+
+  textField.addEventListener('contextmenu', function() { return false });
 
   textField.addEventListener('mouseup', function() {
     launchHighlightModal();
