@@ -1,12 +1,12 @@
 %section.header
   .hidden-xs.hidden-sm.large
     .row
-      .col-xs-4.branding-col
+      .col-xs-3.branding-col
         = link_to root_path, class: 'logo' do
           = image_tag 'header-icon-placeholder.png', class: 'icon', alt: "The LitCharts.com logo."
           %span.text LitCharts
         %span.tagline From the creators of SparkNotes, something better.
-      .col-xs-5.links-col
+      .col-xs-6.links-col
         %span.visible-lg
           = link_to '#', class: 'header-menu-option' do
             .option-line How-to
@@ -20,9 +20,12 @@
         = link_to '#', class: 'header-menu-option' do
           .option-line Literature
           .option-line Guides
+        = link_to notes_path, class: 'header-menu-option' do
+          .option-line My
+          .option-line Highlights
       .col-xs-3.text-right.search-col
         - if user_signed_in?
-          = link_to 'Sign Out', destroy_user_session_path, method: :delete
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-default'
         - else
           = link_to 'Sign In', new_user_session_path, class: 'sign-up-in-link sign-in default-header'
           = link_to 'Sign Up', new_user_registration_path, class: 'sign-up-in-link sign-up default-header'

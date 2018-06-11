@@ -5,3 +5,16 @@
   .col-md-1
   .col-md-4
     %h3 Highlights/notes
+    %section.highlights
+      = render(@highlights) || content_tag(:p, 'You have not added any highlights for this text')
+
+.modal.fade#highlight-form{role: "dialog", tabindex: "-1"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label": "Close", "data-dismiss": "modal", type: "button"}
+          %span{"aria-hidden": "true"} ×
+        %h4.modal-title Add highlight
+      .modal-body
+        = render 'highlights/form', text: @text, highlight: Highlight.new
+        %button.btn.btn-default.mmt{"data-dismiss": "modal", type: "button"} Cancel
