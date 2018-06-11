@@ -17,13 +17,23 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".text-content").mouseup(function() {
+  function launchHighlightModal() {
     const selectedText = window.getSelection().toString();
 
     $(".selected-text").html(selectedText);
     $("#highlight_content").val(selectedText);
     $("#highlight-form").modal("show");
-  });
+  };
+
+  const textField = document.querySelector('.text-content');
+
+  textField.addEventListener('mouseup', function() {
+    launchHighlightModal();
+  })
+
+  textField.addEventListener('touchend', function() {
+    launchHighlightModal();
+  })
 
   $("#new_highlight").on("submit", function() {
     $("#highlight-form").modal("hide");
