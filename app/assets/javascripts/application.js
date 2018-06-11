@@ -28,9 +28,11 @@ $(document).ready(function() {
   function launchHighlightModal() {
     const selectedText = window.getSelection().toString();
 
-    $(".selected-text").html(selectedText);
-    $("#highlight_content").val(selectedText);
-    $("#highlight-form").modal("show");
+    if(selectedText.length > 0) {
+      $(".selected-text").html(selectedText);
+      $("#highlight_content").val(selectedText);
+      $("#highlight-form").modal("show");
+    }
   };
 
   const textField = document.querySelector('.text-content');
@@ -40,7 +42,6 @@ $(document).ready(function() {
   });
 
   textField.addEventListener('touchend', function(e) {
-    e.preventDefault();
     launchHighlightModal();
   });
 
