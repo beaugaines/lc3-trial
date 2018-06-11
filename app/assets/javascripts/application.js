@@ -28,15 +28,9 @@ $(document).ready(function() {
 
   const textField = document.querySelector('.text-content');
 
-  textField.addEventListener('contextmenu', function() { return false });
-
   textField.addEventListener('mouseup', function() {
     launchHighlightModal();
-  })
-
-  textField.addEventListener('touchend', function() {
-    launchHighlightModal();
-  })
+  });
 
   $("#new_highlight").on("submit", function() {
     $("#highlight-form").modal("hide");
