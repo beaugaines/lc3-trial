@@ -6,8 +6,8 @@ $('.flash').html('<div class="alert alert-success" data-item-id="<%= @highlight.
 
 $('.alert').click(function() {
   const itemId = $(this)[0].dataset.itemId;
-  $(this).slideUp();
   const el = $(`#highlight_${itemId}`);
+
   $('html, body').animate({
     scrollTop: $(el).offset().top
   }, 'slow');

@@ -4,4 +4,4 @@
     .col
       .card
         .card-title= link_to text.name, text
-        .card-body= truncate(text.content)
+        .card-body= truncate(text.content, length: 50)

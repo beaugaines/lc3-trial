@@ -13,28 +13,29 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require local-time
 //= require_tree .
 
 $(document).ready(function() {
-  $('.text-content').mouseup(function() {
+  $(".text-content").mouseup(function() {
     const selectedText = window.getSelection().toString();
 
-    $('.selected-text').html(selectedText);
-    $('#highlight_content').val(selectedText);
-    $('#highlight-form').modal('show');
+    $(".selected-text").html(selectedText);
+    $("#highlight_content").val(selectedText);
+    $("#highlight-form").modal("show");
   });
 
-  $('#highlight-form').on('shown.bs.modal', function() {
-    $('#highlight_notes').focus();
+  $("#new_highlight").on("submit", function() {
+    $("#highlight-form").modal("hide");
   });
 
-  $('#highlight-form').on('hidden.bs.modal', function() {
-    $('.selected-text').html('');
-    $('#highlight_content').val('');
-    $('#highlight_notes').val('');
+  $("#highlight-form").on("shown.bs.modal", function() {
+    $("#highlight_notes").focus();
   });
 
-  $("#new_highlight").on('submit', function() {
-    $('#highlight-form').modal('hide');
+  $("#highlight-form").on("hidden.bs.modal", function() {
+    $(".selected-text").html("");
+    $("#highlight_content").val("");
+    $("#highlight_notes").val("");
   });
 });

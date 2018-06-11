@@ -1,7 +1,7 @@
 class HighlightsController < ApplicationController
 
   def index
-    @highlights = current_user.highlights.recently_updated.includes(:text)
+    @highlights = current_user.highlights.order_by_recently_updated.includes(:text)
   end
 
   def create
@@ -50,4 +50,5 @@ class HighlightsController < ApplicationController
   def highlight_params
     params.require(:highlight).permit(:content, :notes)
   end
+
 end

@@ -13,8 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'hamlit-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
-gem 'feathericon-rails'
 gem 'faker'
+gem 'local_time'
 
 group :production do
   gem 'rails_12factor'
