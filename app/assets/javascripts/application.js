@@ -37,13 +37,13 @@ $(document).ready(function() {
 
   const textField = document.querySelector('.text-content');
 
-  textField.addEventListener('mouseup', function(e) {
+  textField.addEventListener('click', function(e) {
     launchHighlightModal();
   });
 
-  textField.addEventListener('touchend', function(e) {
-    launchHighlightModal();
-  });
+  // textField.addEventListener('touchend', function(e) {
+  //   launchHighlightModal();
+  // });
 
   $("#new_highlight").on("submit", function() {
     $("#highlight-form").modal("hide");
