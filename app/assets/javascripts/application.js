@@ -18,6 +18,13 @@
 
 $(document).ready(function() {
 
+  // disable context menu for long tap
+  window.oncontextmenu = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };
+
   function launchHighlightModal() {
     const selectedText = window.getSelection().toString();
 
