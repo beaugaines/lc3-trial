@@ -1,7 +1,0 @@
-== README
-
-Welcome to the LitCharts trial app README!
-
-We're using Ruby 2.2.5, Rails 4.2.8, and Postgres 9.6.1.
-
-
