@@ -1,1 +1,1 @@
-$('#highlight_<%= @highlight.id %>').html('<%= j render(@highlight) %>');
+$('#highlight_<%= @highlight.id %>').replaceWith('<%= j render(@highlight) %>');

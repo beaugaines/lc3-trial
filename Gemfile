@@ -12,9 +12,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'hamlit-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap_form'
 gem 'devise'
 gem 'faker'
 gem 'local_time'
+gem 'redis-rails'
+gem 'figaro'
 
 group :production do
   gem 'rails_12factor'

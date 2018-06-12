@@ -6,7 +6,8 @@
   .col-md-4
     %h3 Highlights/notes
     %section.highlights
-      = render(@highlights) || content_tag(:p, 'You have not added any highlights for this text')
+      - cache(@highlights) do
+        = render(@highlights) || content_tag(:p, 'You have not added any highlights for this text')
 
 .modal.fade#highlight-form{role: "dialog", tabindex: "-1"}
   .modal-dialog{role: "document"}

@@ -1,8 +1,12 @@
-%hr/
-= div_for(highlight) do
-  %blockquote.highlighted-text= highlight.content
-  %p.notes= highlight.notes
-  .timestamp.mmt.mmb= local_time(highlight.created_at)
-  .lmb
-    = link_to 'Edit', edit_text_highlight_path(@text, highlight), remote: true, class: 'btn btn-info'
-    = link_to 'Remove', [@text, highlight], method: :delete, remote: true, class: 'btn btn-warning', data: { confirm: 'Are you sure?' }
+- cache(highlight) do
+  %hr/
+  = div_for(highlight) do
+    .card
+      .card-title
+        %h3= highlight.content
+      .card-body.mmb
+        = highlight.notes
+      .timestamp.mmt.mmb= local_time(highlight.created_at)
+    .lmb
+      = link_to 'Edit', edit_text_highlight_path(@text, highlight), remote: true, class: 'btn btn-info'
+      = link_to 'Remove', [@text, highlight], method: :delete, remote: true, class: 'btn btn-warning', data: { confirm: 'Are you sure?' }
