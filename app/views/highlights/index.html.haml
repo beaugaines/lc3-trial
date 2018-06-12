@@ -1,15 +1,18 @@
 %h1 My highlights
 .row
   .col-md-10
-    - cache(@highlights) do
-      - @highlights.each do |highlight|
-        - cache(highlight) do
-          = div_for(highlight) do
-            .card
-              .card-title
-                %h3= highlight.content
-              .card-body.mmb
-                = highlight.notes
-            = link_to 'View text', highlight.text, class: 'btn btn-default'
-            = link_to 'Edit', edit_text_highlight_path(highlight.text, highlight), remote: true, class: 'btn btn-info'
-            = link_to 'Remove', [highlight.text, highlight], method: :delete, remote: true, class: 'btn btn-warning', data: { confirm: 'Are you sure?' }
+    - if @highlights.any?
+      - cache(@highlights) do
+        - @highlights.each do |highlight|
+          - cache(highlight) do
+            = div_for(highlight) do
+              .card
+                .card-title
+                  %h3= highlight.content
+                .card-body.mmb
+                  = highlight.notes
+              = link_to 'View text', highlight.text, class: 'btn btn-default'
+              = link_to 'Edit', edit_text_highlight_path(highlight.text, highlight), remote: true, class: 'btn btn-info'
+              = link_to 'Remove', [highlight.text, highlight], method: :delete, remote: true, class: 'btn btn-warning', data: { confirm: 'Are you sure?' }
+    - else
+      %p You have not added any highlights
