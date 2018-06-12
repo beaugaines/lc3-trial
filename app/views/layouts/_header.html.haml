@@ -56,9 +56,9 @@
             = link_to '#', class: 'header-menu-option' do
               .option-line Lit
               .option-line Terms
-            = link_to '#', class: 'header-menu-option' do
-              .option-line Shakespeare
-              .option-line Translations
+            = link_to notes_path, class: 'header-menu-option' do
+              .option-line My
+              .option-line Highlights
 
         %table
           %tr
@@ -87,5 +87,6 @@
               = link_to '#', class: 'header-menu-option' do
                 Lit Terms
             %td
-              = link_to '#', class: 'header-menu-option' do
-                Shakespeare Translations
+              = link_to notes_path, class: 'header-menu-option' do
+                My highlights
+
