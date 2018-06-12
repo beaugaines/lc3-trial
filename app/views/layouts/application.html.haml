@@ -12,6 +12,9 @@
       = render partial: 'layouts/header'
 
       %section.container
+        %noscript
+          .alert.alert-danger
+            You must have Javascript enabled to use this site
         .flash.smt
         = yield
 

@@ -37,25 +37,27 @@ $(document).ready(function() {
 
   const textField = document.querySelector('.text-content');
 
-  textField.addEventListener('click', function(e) {
-    launchHighlightModal();
-  });
+  if (textField) {
+    textField.addEventListener('click', function(e) {
+      launchHighlightModal();
+    });
 
-  textField.addEventListener('touchend', function(e) {
-    launchHighlightModal();
-  });
+    textField.addEventListener('touchend', function(e) {
+      launchHighlightModal();
+    });
 
-  $("#new_highlight").on("submit", function() {
-    $("#highlight-form").modal("hide");
-  });
+    $("#new_highlight").on("submit", function() {
+      $("#highlight-form").modal("hide");
+    });
 
-  $("#highlight-form").on("shown.bs.modal", function() {
-    $("#highlight_notes").focus();
-  });
+    $("#highlight-form").on("shown.bs.modal", function() {
+      $("#highlight_notes").focus();
+    });
 
-  $("#highlight-form").on("hidden.bs.modal", function() {
-    $(".selected-text").html("");
-    $("#highlight_content").val("");
-    $("#highlight_notes").val("");
-  });
+    $("#highlight-form").on("hidden.bs.modal", function() {
+      $(".selected-text").html("");
+      $("#highlight_content").val("");
+      $("#highlight_notes").val("");
+    });
+  }
 });
