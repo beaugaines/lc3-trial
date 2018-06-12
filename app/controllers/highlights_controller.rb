@@ -1,5 +1,7 @@
 class HighlightsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @highlights = current_user.highlights.order_by_recently_updated.includes(:text)
   end

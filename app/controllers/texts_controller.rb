@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+  before_action :authenticate_user!, only: :show
 
   def index
     @texts = Text.all
